@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <% var error = typeof error !== "undefined" ? error : "" %> <% if(error &&
+    error.length > 0){%>
+    <div
+      class="px-3 py-2 bg-red-500 absolute left-1/2 top-0 -translate-x-[50%] rounded-md"
+    >
+      <p class="text-red-200"><%= error %></p>
+    </div>
+    <%} %> <% var success = typeof success !== "undefined" ? success : "" %> <%
+    if(success.length > 0){%>
+    <div
+      class="px-3 py-2 bg-blue-500 absolute left-1/2 top-0 -translate-x-[50%] rounded-md"
+    >
+      <p class="text-white"><%= success %></p>
+    </div>
+    <%} %> <% var loggedIn = typeof loggedIn !== "undefined" ? loggedIn : true
+    %> <% if(loggedIn){%>
+    <nav
+      class="w-full h-[13vh] flex border-b-[1px] shadow-md sticky top-0 z-10 bg-white items-center px-10 justify-between"
+    >
+      <div class="w-[5vw] h-[5vw] rounded-full overflow-hidden">
+        <% var user = typeof user !== "undefined" ? user : "" %> <% if(user){%>
+        <img
+          class="w-full h-full object-cover"
+          src="/images/uploads/<%= user.profilepic %>"
+          alt=""
+        />
+        <%} %>
+      </div>
+      <div class="flex gap-8 items-center">
+        <a class="font-medium cursor-pointer" href="/profile">Home</a>
+        <a class="font-medium cursor-pointer" href="/place">Add Place</a>
+        <div class="px-4 py-1 rounded-md text-red-200 bg-red-500">
+          <a class="font-medium cursor-pointer" href="/logout">Logout</a>
+        </div>
+      </div>
+    </nav>
+    <%} %>
+  </body>
+</html>

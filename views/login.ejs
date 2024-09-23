@@ -1,0 +1,13 @@
+<%- include("./partials/header.ejs") %>
+<div class="w-full h-[100vh] bg-[url('https://images.unsplash.com/photo-1690046793146-dd1cc08ea17d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center flex items-center justify-center">   
+    <div class="w-[32vw] rounded-2xl bg-white px-5 py-5">
+        <h3 class="text-2xl mb-5 font-semibold">Login Your Account</h3>
+        <form action="/login" method="post">
+            <input class="block px-3 py-2 border-[1.5px] outline-none border-zinc-400 rounded-md w-full mt-3" type="email" placeholder="enter your email" name="email">
+            <input class="block px-3 py-2 border-[1.5px] outline-none border-zinc-400 rounded-md w-full mt-3" type="password" placeholder="enter password" name="password">
+            <input class="px-3 py-2 bg-blue-500 text-white rounded-md w-full mt-3" type="submit" value="Create">
+        </form>
+        <a class="inline-block text-blue-500 mt-5" href="/">Don't Have an Account, Please Register</a>
+    </div>
+</div>
+<%- include("./partials/footer.ejs") %>

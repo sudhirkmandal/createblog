@@ -1,0 +1,21 @@
+<%- include("./partials/header.ejs") %>
+<div class="w-full min-h-[87vh] flex items-center justify-center">  
+    <div class="w-[40rem] min-h-[60vh] py-3">
+      <img class="w-full h-[55vh] object-cover rounded-md" src="/images/uploads/<%= allPlace.image %>" alt="<%= allPlace.name %> image" />
+      <ul class="flex flex-col gap-1 mt-2">
+        <li class="font-semibold"><%= allPlace.name %></li>
+        <li><%= allPlace.description %></li>
+        <li><%= allPlace.location %></li>
+      </ul>
+      <br />
+      <div class="flex gap-5">
+        <a class="px-3 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-md" href="/place/edit/<%= allPlace.id %>">
+          Edit this Place
+        </a>
+        <a class="px-3 py-2 bg-red-500 hover:bg-red-600 text-white rounded-md" href="/place/delete/<%= allPlace.id %>">
+          Delete this Place
+        </a>
+      </div>
+    </div>  
+</div>
+<%- include("./partials/footer.ejs") %>
